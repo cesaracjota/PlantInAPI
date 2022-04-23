@@ -1,0 +1,56 @@
+<div class="col-md-4 mx-auto">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Edit Product</h3>
+        </div>
+        <div class="card-body">
+            <form action="/productos/edit/{{producto._id}}?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input type="text" name="nombre" class="form-control" placeholder="Name" value="{{producto.nombre}}" autofocus required />
+                </div>
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="estado" id="inlineRadio1" value=true checked
+                            <label class="form-check-label" for="inlineRadio1">Active</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="estado" id="inlineRadio2" value=false>
+                        <label class="form-check-label" for="inlineRadio2">Inactive</label>
+                    </div>
+                </div>
+                <select class="browser-default custom-select" name="usuario">
+                    {{#each usuarios}}
+                    <option value={{{_id}}}>{{nombre}}</option>
+                    {{/each}}
+                </select>
+                <br></br>
+                <div class="form-group">
+                    <input type="number" name="precio" class="form-control" placeholder="Price" required value="{{producto.precio}}" />
+                </div>
+                
+                <select class="browser-default custom-select" name="categoria">
+                    {{#each categorias}}
+                    <option value={{{_id}}}>{{nombre}}</option>
+                    {{/each}}
+                </select>
+                <br></br>
+                <div class="form-group">
+                    <textarea name="descripcion" class="form-control" placeholder="Description">{{producto.descripcion}}</textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="img" class="form-control" placeholder="imagen" required value="{{producto.img}}" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Save
+                    </button>
+                </div>
+                <div class="form-group">
+                    <a href="/" class="btn btn-danger btn-block">
+                        Volver
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

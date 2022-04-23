@@ -1,0 +1,28 @@
+<a href="/productos/add" class="btn btn-success btn-block">Create Product One!</a>
+<br></br>
+<div class="row">
+  
+  {{#each productos}}
+  
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title d-flex justify-content-between align-items-center">
+          {{ title }} <a href="/productos/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+        </h4>
+        <p><b>Nombre: </b>{{ nombre }} </p>
+        <p><b>Precio: </b>{{ precio }} </p>
+        <p><b>Descripcion:  </b>{{ descripcion }} </p>
+        <p><b>Usuario:  </b>{{ producto_usuario.nombre }} </p>
+        <p><b>Categoria:</b> {{categoria_usuario.nombre}}</p>
+        <!-- DELETE REQUEST -->
+        <form action="/productos/delete/{{_id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  {{/each}}
+</div>

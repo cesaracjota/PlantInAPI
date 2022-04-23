@@ -1,0 +1,39 @@
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
+        <a class="navbar-brand p-3" href="/">AUIX</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-link" href="/">Usuarios <span class="sr-only"></span></a>
+                <a class="nav-link" href="/categorias">Categorias <span class="sr-only"></span></a></li>
+                <a class="nav-link" href="/productos">Productos <span class="sr-only"></span></a></li>
+            </ul>
+        </div>
+        <ul class="navbar-nav ml-auto">
+        {{#if user}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Notes 
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/notes">All Notes</a>
+              <a class="dropdown-item" href="/notes/add">Add A Note</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/users/logout">Logout</a>
+            </div>
+          </li>
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/login/signin">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login/signup">Register</a>
+          </li>
+        {{/if}}
+      </ul>
+        
+    </nav>
+</div>
