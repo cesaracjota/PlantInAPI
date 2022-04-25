@@ -11,7 +11,7 @@ const passport = require('passport');
 class Server {
     constructor(){
         this.app = express();
-        this.port = process.env.PORT;
+        this.port = process.env.PORT || 3050;
         this.usuariosPath = '/api/usuarios';
        
         // Conectar a base de datos
